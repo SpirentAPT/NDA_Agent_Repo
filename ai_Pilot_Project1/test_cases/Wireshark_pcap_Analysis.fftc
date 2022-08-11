@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<testCase version="8.7.2.202202281342">
+    <general>
+        <rendering testCaseId="TC_004" testCaseName="Wireshark_PCAP_Validation"/>
+        <documentation>PCAP Validation</documentation>
+        <notes>\t\t\t\t</notes>
+        <owner>Ashok</owner>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="d148959b-787d-42cb-83f1-0ff4adc7556c" action="open" session="t1">
+                    <command>
+                        <body>project://di_Pilot_Project1/session_profiles/Wireshark.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionProperties type="com.fnfr.svt.applications.wireshark.WiresharkSessionProperties">
+                            <sessionbuilderInitializeAction type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </sessionProperties>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="27f0630e-f04c-4f4b-b700-a79262f4229c" action="command" session="t1" normalOffset="16.628" estimatedStepExecutionTime="8.882">
+                    <command>
+                        <body>query load project://ai_Pilot_Project1/configuration/capture1.pcap</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="ad91d1a2-179f-4fbf-be5b-2b319b2c7f76" action="command" session="t1" normalOffset="60.463" estimatedStepExecutionTime="12.922">
+                    <command>
+                        <body>query filter set ip.addr == 192.85.1.3</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="15dc588d-c0f5-46f6-a7f7-4dbeb4bf9b68" action="command" session="t1" normalOffset="26.053" estimatedStepExecutionTime="0.154">
+                    <command>
+                        <body>query packets</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="ffde618b-7906-48ec-a246-938ca04c56e7" action="command" session="t1" normalOffset="14.283" estimatedStepExecutionTime="0.026">
+                    <command>
+                        <body>query details 1</body>
+                    </command>
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup" useLineMode="true">
+                                        <regex>^\\s+ip\\.dst_host\\s+\\|\\s+(((\\d+\\.)+\\d+))\\s+\\|\\s+Destination Host:\\s+((\\d+\\.)+\\d+)\\s+\\| c\\d+\\s+$</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>value == &quot;192.85.1.3&quot;</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>IP Destination Host = [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>IP Destination Host = [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="54f6d0fa-3b99-4ab4-827f-643a2fe94d83" action="command" session="t1" normalOffset="6.058" estimatedStepExecutionTime="8.64">
+                    <command>
+                        <body>query filter reset</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="9764add7-140d-4234-8649-6f8cb11fdb32" action="command" session="t1" normalOffset="12.071" estimatedStepExecutionTime="21.983">
+                    <command>
+                        <body>query filter set ip.dsfield.dscp == 48</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="8ca8f51c-99f4-4a5f-831e-f49c5d4e11be" action="command" session="t1" normalOffset="4.519" estimatedStepExecutionTime="0.137">
+                    <command>
+                        <body>query packets</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="bf86516c-400b-4e03-86ce-8c109d24b578" action="command" session="t1" normalOffset="16.413" estimatedStepExecutionTime="0.028">
+                    <command>
+                        <body>query details 1</body>
+                    </command>
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup" useLineMode="true">
+                                        <regex>^\\s+ip\\.dsfield\\.dscp\\s+\\|\\s+(\\d+)\\s+\\|\\s+\\d+\\s+\\d+\\.\\. = Differentiated Services Codepoint: Class Selector\\s+\\d+\\s+\\(\\d+\\)\\s+\\|\\s+\\d+\\s+$</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>int(value) == 48</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>{auto_message_true}</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>{auto_message_false}</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="1f3aa360-e8ee-4d83-87b6-92f03207e42e" action="close" session="t1" normalOffset="9.106">
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

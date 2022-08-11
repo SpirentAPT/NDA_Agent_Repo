@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ParameterTree version="9.0.2.202205250744">
+    <parameters escape="true">
+        <parameters xmlns:pt="http://www.fnfr.com/schemas/parameterTree">
+            <router_credentials>
+                <username>root</username>
+                <password pt:mask="true">KNcId0W87Dk=</password>
+            </router_credentials>
+            <Router_IP_List>
+                <param1>10.62.224.87</param1>
+                <param2>10.62.224.83</param2>
+                <param3>10.62.224.84</param3>
+            </Router_IP_List>
+            <WEB_GUI>
+                <URL>http://10.62.224.71:8082</URL>
+                <user>aptadmin</user>
+                <pass pt:mask="true">Z8+SyhGzcD/jnkAIQCNNZA==</pass>
+            </WEB_GUI>
+            <Invalid_Router_IP>10.62.224.88</Invalid_Router_IP>
+            <APTVelocity>
+                <ip>10.62.224.62</ip>
+                <user>root</user>
+                <pass>root</pass>
+            </APTVelocity>
+        </parameters>
+    </parameters>
+</ParameterTree>

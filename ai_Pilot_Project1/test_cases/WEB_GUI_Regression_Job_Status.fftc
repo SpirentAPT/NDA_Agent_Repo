@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<testCase version="8.7.2.202202281342">
+    <general>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="15b997c8-2107-4fc5-957b-ab6b361d8c87" action="open" session="t1">
+                    <command>
+                        <body>project://di_Pilot_Project1/session_profiles/Selenium_Firefox.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumSessionProperties"/>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="7c301db8-eb9d-4d0f-ba89-9555c4862e3d" action="go" session="t1" normalOffset="28.567" estimatedStepExecutionTime="0.038">
+                    <command>
+                        <body>[param(&apos;WEB_GUI/URL&apos;)]</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumPageLoadCompletionProperties"/>
+                </item>
+                <item guid="9f9af6d2-b153-4755-a5a9-fd8e70c1d2e0" action="windowMaximize" session="t1">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties"/>
+                </item>
+                <item guid="f4a611f6-0a86-40d0-a720-6bc09c022393" action="getInnerText" session="t1" target="css=h1" normalOffset="6.428" estimatedStepExecutionTime="0.025">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties"/>
+                </item>
+                <item guid="6abe898d-4430-4e3d-aebc-e0597d7772e4" action="type" session="t1" target="id=j_username" normalOffset="6.941" estimatedStepExecutionTime="0.034">
+                    <command>
+                        <body>[param(&apos;WEB_GUI/user&apos;)]</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties"/>
+                </item>
+                <item guid="fb307e5d-4368-45b6-826b-940aeac55076" action="type" session="t1" target="name=j_password" normalOffset="0.067" estimatedStepExecutionTime="0.871">
+                    <command>
+                        <body masked="true">4RvNHVItEyvwBgoiMtOX2WVWe1p0UPdN</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties"/>
+                </item>
+                <item guid="05b0e14f-1b4b-4b1f-954a-f225de5e208e" action="click" session="t1" target="name=Submit" normalOffset="33.166" estimatedStepExecutionTime="0.135">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties"/>
+                </item>
+                <item guid="8d3bd67e-3635-415e-a04d-09d754a1376a" action="showTable" session="t1" target="id=projectstatus" normalOffset="1.59" estimatedStepExecutionTime="2.82">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumShowTableProperties"/>
+                </item>
+                <item guid="432ff937-fded-4ffc-9366-645e797e8614" action="click" session="t1" target="link=Velocity_Jenkins_Jobs" normalOffset="4.241" estimatedStepExecutionTime="3.45">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties"/>
+                </item>
+                <item guid="8cce6340-5df0-480a-92d6-47d06e86a3b4" action="click" session="t1" target="xpath=//*[@id=&quot;buildHistory&quot;]/div[2]/table/tbody/tr[2]/td/div[2]/a" normalOffset="27.569" estimatedStepExecutionTime="0.072">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties"/>
+                </item>
+                <item guid="6274e69b-3370-479b-b703-e221c10cc440" action="click" session="t1" target="xpath=//*[@id=&quot;tasks&quot;]/div[4]/span/a/span[2]" normalOffset="27.569" estimatedStepExecutionTime="0.072">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties"/>
+                </item>
+                <item guid="74aaf32e-37d6-4b93-898b-1f87dba66d55" action="getInnerText" session="t1" target="css=pre.console-output" normalOffset="5.985" estimatedStepExecutionTime="0.744">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup" useLineMode="true">
+                                        <regex>^Finished:\\s+(\\w+)$</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>value == &quot;SUCCESS&quot;</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>Regression Test Execution is [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>Regression Test Execution is [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties"/>
+                </item>
+                <item guid="5756f4f1-52dc-474d-9500-278acc806a77" action="click" session="t1" target="css=span.task-link-text" normalOffset="3.275" estimatedStepExecutionTime="0.505">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties"/>
+                </item>
+                <item guid="736848e0-3b7b-4c80-b31d-db79354f4a2a" action="click" session="t1" target="link=log out" normalOffset="28.545" estimatedStepExecutionTime="0.024">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties"/>
+                </item>
+                <item guid="e1337759-c6ef-45f3-a5d1-5d37498f528c" action="close" session="t1" normalOffset="0.003">
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

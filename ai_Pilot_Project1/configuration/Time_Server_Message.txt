@@ -1,0 +1,10 @@
+fbs0:6457 time_lapse ntpsync 11:33:45
+Time Source:NTP CLOCK
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Microsoft Corporation. All rights reserved.
+
+
+fbs1:6F57 time_lapse ntpsync 11:33:45
+Time Source:LOCAL TIME
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Microsoft Corporation. All rights reserved.

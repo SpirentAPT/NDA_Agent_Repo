@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<testCase version="9.0.2.202205250744">
+    <general>
+        <rendering testCaseId="TC_009" testCaseName="testcase_intermediate_results"/>
+        <documentation>TestCase Intermediate Results</documentation>
+        <owner>Ashok</owner>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="a6143f5e-1bbb-4987-a6c3-01433e33d83e" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>print(&quot;This test case is to replicate Intermediate Results Scenario&quot;)</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

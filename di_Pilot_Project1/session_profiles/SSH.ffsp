@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<SessionTemplate version="8.6.2.202112190518">
+    <baseApplication>com.fnfr.svt.applications.ssh</baseApplication>
+    <sessionProperties type="com.fnfr.svt.applications.ssh.documents.SSHProperties">
+        <TerminalProperties>
+            <captureProperties>
+                <commandBreakChars inherit="false">
+                    <item>[char Ctrl-C]</item>
+                </commandBreakChars>
+            </captureProperties>
+            <prompts merge="true">
+                <item name="normal1" MatchMethod="WILDCARD">
+                    <Content>*#</Content>
+                </item>
+            </prompts>
+        </TerminalProperties>
+        <ipAddress inherit="false">10.62.224.22</ipAddress>
+        <user inherit="false">root</user>
+        <password inherit="false" masked="true">KNcId0W87Dk=</password>
+    </sessionProperties>
+    <responseLibrary inherit="false">project://di_Pilot_Project1/</responseLibrary>
+    <formMapLibrary inherit="false">project://di_Pilot_Project1/</formMapLibrary>
+    <language>Python</language>
+</SessionTemplate>

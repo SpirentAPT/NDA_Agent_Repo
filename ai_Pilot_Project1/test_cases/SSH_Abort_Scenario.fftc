@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<testCase version="9.0.2.202205250744">
+    <general>
+        <rendering testCaseId="TC_008" testCaseName="ssh_abort_scenario"/>
+        <documentation>SSH Abort Scenario</documentation>
+        <owner>Ashok</owner>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="4aab4ea7-5fa2-422a-94c2-86d48181e4a1" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>router_ip = param(&apos;Invalid_Router_IP&apos;)</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="b93b85ec-1f2a-4e02-8170-18175c94b48d" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Routers SW Version Check</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="91f250fe-1c02-4b44-bbe5-150d8a24b38e" action="open" session="t1">
+                    <command>
+                        <body>project://di_Pilot_Project1/session_profiles/SSH.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                        <sessionProperties type="com.fnfr.svt.applications.ssh.documents.SSHProperties">
+                            <ipAddress inherit="false">[router_ip]</ipAddress>
+                            <user inherit="false">[param(&apos;router_credentials/username&apos;)]</user>
+                            <password inherit="false" masked="false">[param(&apos;router_credentials/password&apos;)]</password>
+                        </sessionProperties>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="61d8572b-7a18-4498-a3b1-7f33d63700e6" action="command" session="t1">
+                    <command>
+                        <body>term len 0</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+                <item guid="c2cffc73-763f-432e-88e3-cbe29caf3ddd" action="command" session="t1" normalOffset="7.43" estimatedStepExecutionTime="0.01">
+                    <command>
+                        <body>sh ip int br</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties">
+                        <completionProperties expectedIdleTime="0.992" expectedIdleTime.inherit="false"/>
+                    </applicationProperties>
+                </item>
+                <item guid="2a7564e3-44f2-4dee-9d7f-cf26617afa10" action="command" session="t1" normalOffset="6.231" estimatedStepExecutionTime="0.018">
+                    <command>
+                        <body>show version</body>
+                    </command>
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup" useLineMode="true">
+                                        <regex>^Cisco IOS XE Software, Version\\s+(\\S+)\\s+- Standard Support Release$</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>value == &quot;03.12.00.S&quot;</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>Router running on valid Software Version [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>Router running on invalid Software Version [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+                <item guid="562c4fd3-0111-4ea7-bea5-5bfd10424ced" action="close" session="t1" normalOffset="6.172">
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

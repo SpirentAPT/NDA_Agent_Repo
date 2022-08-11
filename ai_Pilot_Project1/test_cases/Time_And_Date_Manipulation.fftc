@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<testCase version="8.7.2.202202281342">
+    <general>
+        <rendering testCaseId="TC_002" testCaseName="Printing_Current_System_Time"/>
+        <documentation>Current Time Check</documentation>
+        <owner>Ashok</owner>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="60c2e7b9-0b24-40cd-bd7d-d823ef313079" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Method1: Finding Delta Time Difference between Start-End Time</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="8a3dbd74-9950-4f0b-9bcc-f3eb0286bdd5" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>from datetime import datetime</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="15f287bb-c555-4d1b-9ffe-fb0af76989b3" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>import datetime as dt</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="8cc9a96c-4163-4e9d-92a6-3fc212a05e74" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>start_time = &apos;10:33:26&apos;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="a4ee4597-59fe-480e-8fe5-b2e761054593" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>end_time = &apos;10:38:49&apos;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="b0143a01-4d54-401b-a5b6-5d5ec1447c33" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>FMT = &apos;%H:%M:%S&apos;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="beb2912e-90c5-4fce-a24f-2a8ff2e5ee6b" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>tdelta = datetime.strptime(end_time, FMT) - datetime.strptime(start_time, FMT)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="0b1d71f0-9db3-4761-99cf-81d9b4749ee0" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print(tdelta)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="8a6356f0-787b-4de6-8d06-94db80df618d" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Method2: Finding Delta Time Difference between Start-End Time</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="3e2e1d74-cbef-480c-a7db-18417a8b6038" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>start_time1 = &apos;10:33:26&apos;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="33d1d655-d36e-48ae-9526-613b92e61fe5" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>end_time1 = &apos;10:38:49&apos;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="2cdf2663-f04a-4a7a-9867-7b5afa460c09" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time1 = datetime.strptime(start_time1, &apos;%H:%M:%S&apos;)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="f21ca28b-49e1-435d-8da8-85f6e086d2a2" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time2 = datetime.strptime(end_time1, &apos;%H:%M:%S&apos;)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="f4ffc8a9-64ff-48d0-92f1-286029dd2f18" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>tdelta2 = time2 - time1</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="069b7b15-9fc6-430e-bcf0-bf6000a12af1" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print(tdelta2)</body>
+                            </command>
+                            <postProcessing>
+                                <analysisRules>
+                                    <item>
+                                        <extractorInfo extractorType="regex">
+                                            <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup" useLineMode="true">
+                                                <regex>^\\S+$</regex>
+                                                <extractionGroupIndex>0</extractionGroupIndex>
+                                            </extractorProperties>
+                                        </extractorInfo>
+                                        <processorInfo ruleType="store">
+                                            <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
+                                                <storageLocation>var1</storageLocation>
+                                                <responseValue type="com.fnfr.documents.PropertyBoolean">false</responseValue>
+                                                <variable type="com.fnfr.documents.PropertyBoolean">true</variable>
+                                                <secret type="com.fnfr.documents.PropertyBoolean">false</secret>
+                                            </ruleProperties>
+                                        </processorInfo>
+                                    </item>
+                                </analysisRules>
+                            </postProcessing>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="12e382f9-d385-4b44-a469-352634c36e65" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print(var1[5:]) #Trimming first 5 characters</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="0af49ee8-4618-4c4f-95cd-fac9755409e0" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print(var1[:-3]) #Trimming end 3 characters</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="6e2947f5-54ef-4b7d-9ada-ba64de90a32d" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Convert Time in to Seconds.milliseconds</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="17028b92-5327-471b-bc00-31ed94427a41" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time_string = &apos;0:05:23&apos;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="32db1d6d-3671-44d1-bcd2-59b76ac591ed" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time1 = dt.datetime.strptime(time_string, &apos;%H:%M:%S&apos;)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="60440981-cb31-4e02-8e40-982fb48b260b" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time_zero = dt.datetime.strptime(&apos;00:00:00&apos;, &apos;%H:%M:%S&apos;)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="ed4ecbeb-a750-4182-abcf-2235c98e42d6" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print((time1 - time_zero).total_seconds())</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="1f3fcb3f-4f55-496f-a5c2-173e52a9866b" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Start &amp; End Time Difference in Seconds</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="4c857a1e-3a0a-41c1-afdf-600924fdc1b6" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>import time</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="352d55a9-5471-4c7d-af0f-2c85d5dd3365" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>import datetime</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="29fdfc4a-2bc2-4d80-9ef1-5410855c01ad" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time1 = time.time()</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="315c1d2c-edea-448c-8cf6-e18106b9a500" action="sleep">
+                            <command>
+                                <body>12</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="518c1af6-d095-4715-8be6-e549fd9c4d46" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>time2 = time.time()</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="13c34810-7cb3-4c28-91c0-ee2550552eba" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>diff = time2 - time1</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="71d86c92-e032-49e2-a9f5-612f303475fe" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print(diff)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="072a923b-c2ee-47a7-8dcb-048fde1e84c7" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Printing Current Date &amp; Time in ISO Format</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="058c58a5-0295-40f8-8419-32ab3ef8f0f8" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>from datetime import datetime</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="44d8fc05-cf2b-4722-a327-b054c593b827" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>now = datetime.today().isoformat()</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                        <item guid="36b56f68-34a1-4526-96f0-d5232d4cde28" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>print(now)</body>
+                            </command>
+                            <postProcessing>
+                                <analysisRules>
+                                    <item>
+                                        <extractorInfo extractorType="none">
+                                            <extractorProperties type="com.fnfr.svt.documents.EmptyExtractorPropertyGroup"/>
+                                        </extractorInfo>
+                                        <processorInfo ruleType="assert">
+                                            <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                                <expression>1</expression>
+                                                <actionsWhenTrue>
+                                                    <item actionId="DeclareExecutionIssue">
+                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                            <message>Current System Date and Time is printed correctly</message>
+                                                        </actionProperties>
+                                                    </item>
+                                                    <item actionId="PassTestIfNotAlreadyFailed">
+                                                        <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                    </item>
+                                                </actionsWhenTrue>
+                                                <actionsWhenFalse>
+                                                    <item actionId="DeclareExecutionIssue">
+                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                            <message>Current System Date and Time is printed incorrectly</message>
+                                                        </actionProperties>
+                                                    </item>
+                                                    <item actionId="FailTest">
+                                                        <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                    </item>
+                                                </actionsWhenFalse>
+                                            </ruleProperties>
+                                        </processorInfo>
+                                    </item>
+                                </analysisRules>
+                            </postProcessing>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

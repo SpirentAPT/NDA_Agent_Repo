@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<testCase version="8.7.2.202202281342">
+    <general>
+        <rendering testCaseId="TC_003" testCaseName="Chrome_Selenium_Test"/>
+        <documentation>Chrome Selenium</documentation>
+        <owner>Ashok</owner>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="b08fbf2a-f465-4a36-9273-f1abf79fefd9" action="open" session="t1">
+                    <command>
+                        <body>project://di_Pilot_Project1/session_profiles/Selenium_Chrome.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumSessionProperties"/>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="5ac47d11-3f8b-430b-afd1-8757c3c99169" action="go" session="t1" normalOffset="9.372" estimatedStepExecutionTime="1.872">
+                    <command>
+                        <body>https://www.wikipedia.org/</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumPageLoadCompletionProperties">
+                        <targets inherit="false" transferableToolId="com.fnfr.itest.applications.selenium">
+                            <memberClasses>
+                                <item>com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry</item>
+                            </memberClasses>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="https://www.wikipedia.org/" target.inherit="false"/>
+                        </targets>
+                    </applicationProperties>
+                </item>
+                <item guid="7b29f464-1fe8-4e6b-9653-5cdf962eca8d" action="windowMaximize" session="t1">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties"/>
+                </item>
+                <item guid="650bd874-92eb-4a1a-a472-a48795ff4cf6" action="type" session="t1" target="id=searchInput" normalOffset="0.024" estimatedStepExecutionTime="0.039">
+                    <command>
+                        <body>jio</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties">
+                        <targets inherit="false" transferableToolId="com.fnfr.itest.applications.selenium">
+                            <memberClasses>
+                                <item>com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry</item>
+                            </memberClasses>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="id=searchInput" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="name=search" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="css=#searchInput" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//input[@id=&apos;searchInput&apos;]" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//div[@id=&apos;search-input&apos;]/input" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//div/input" target.inherit="false"/>
+                        </targets>
+                    </applicationProperties>
+                </item>
+                <item guid="61c55c78-50e3-494d-83c5-da57c3ff43fd" action="click" session="t1" target="css=i.sprite.svg-search-icon" normalOffset="13.786" estimatedStepExecutionTime="0.026">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumClickProperties">
+                        <targets inherit="false" transferableToolId="com.fnfr.itest.applications.selenium">
+                            <memberClasses>
+                                <item>com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry</item>
+                            </memberClasses>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="css=i.sprite.svg-search-icon" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//form[@id=&apos;search-form&apos;]/fieldset/button/i" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//button/i" target.inherit="false"/>
+                        </targets>
+                    </applicationProperties>
+                </item>
+                <item guid="8073735f-396e-4a9b-a941-21f39ece378f" action="getInnerText" session="t1" target="xpath=//div[@id=&apos;mw-content-text&apos;]/div/table/caption" normalOffset="16.901" estimatedStepExecutionTime="0.017">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="contains">
+                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.ExtractorContainsPropertyGroup">
+                                        <searchString>Reliance Jio Infocomm Limited</searchString>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>value == 1</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>Wiki Search is succesfull</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>Wiki Search is FAILED</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties">
+                        <targets inherit="false" transferableToolId="com.fnfr.itest.applications.selenium">
+                            <memberClasses>
+                                <item>com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry</item>
+                            </memberClasses>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//div[@id=&apos;mw-content-text&apos;]/div/table/caption" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//caption" target.inherit="false"/>
+                        </targets>
+                    </applicationProperties>
+                </item>
+                <item guid="ac7e35a8-f9ff-4187-a6e7-612c7e005357" action="getInnerText" session="t1" target="id=firstHeading" normalOffset="21.511" estimatedStepExecutionTime="0.054">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="contains">
+                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.ExtractorContainsPropertyGroup">
+                                        <searchString>Jio</searchString>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>value == 1</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>Wiki Page is available for [value]</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>Wiki Page is NOT available</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties">
+                        <targets inherit="false" transferableToolId="com.fnfr.itest.applications.selenium">
+                            <memberClasses>
+                                <item>com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry</item>
+                            </memberClasses>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="id=firstHeading" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="css=#firstHeading" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//h1[@id=&apos;firstHeading&apos;]" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//div[@id=&apos;content&apos;]/h1" target.inherit="false"/>
+                            <item transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumAbstractCommandProperties$TargetEntry" target="xpath=//h1" target.inherit="false"/>
+                        </targets>
+                    </applicationProperties>
+                </item>
+                <item guid="2a624cd0-461e-4266-8175-78fc27973b5e" action="snapshot" session="t1">
+                    <applicationProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.itest.applications.selenium" transferableType="com.spirent.applications.selenium.properties.SeleniumSnapshotProperties" snapshotAlways="true" snapshotAlways.inherit="false" skipHtml="true" skipHtml.inherit="false"/>
+                </item>
+                <item guid="81aca85d-38c5-4f00-bc20-2da2a1600801" action="close" session="t1" normalOffset="0.007">
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

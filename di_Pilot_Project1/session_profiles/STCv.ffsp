@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SessionTemplate version="8.6.2.202112190518">
+    <baseApplication>com.fnfr.svt.applications.spirent.testcenter.gui</baseApplication>
+    <sessionProperties type="com.fnfr.svt.adapter.automation.tools.common.documents.TransferableDocumentObject" transferableToolId="com.fnfr.svt.applications.spirent.testcenter.gui" transferableType="com.fnfr.itest.applications.spirent.testcenter.properties.TestCenterGUISessionProperties" config="project://ai_Pilot_Project1/configuration/STCv_4_75_B2B.xml" config.inherit="false">
+        <tcl transferableToolId="com.fnfr.svt.applications.spirent.testcenter.gui" transferableType="com.fnfr.itest.applications.spirent.testcenter.properties.TclInterpreterProperties" testcenterTclAPIDir="file:/C:/Program%20Files%20(x86)/Spirent%20Communications/Spirent%20TestCenter%204.75/Spirent%20TestCenter%20Application/" testcenterTclAPIDir.inherit="false"/>
+        <configureCustom16bitFilter transferableToolId="com.fnfr.svt.applications.spirent.testcenter.gui" transferableType="com.fnfr.itest.applications.spirent.testcenter.properties.Analyzer16BitFilterProperties" mask="ffff" mask.inherit="false" endOfRange="ffff" endOfRange.inherit="false"/>
+    </sessionProperties>
+    <responseLibrary inherit="false">project://di_Pilot_Project1/</responseLibrary>
+    <formMapLibrary inherit="false">project://di_Pilot_Project1/</formMapLibrary>
+    <language>Python</language>
+</SessionTemplate>

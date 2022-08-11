@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<ResponseMap version="8.6.2.202112190518">
+    <sampleDictionary>
+        <item name="sample1">
+            <action actionType="readFile">
+                <command>
+                    <body>file:/C:/Users/pashok.SPIRENTCOM/Documents/telstra_time.txt</body>
+                </command>
+            </action>
+            <responseBody>fbs0:6457 time_lapse ntpsync 11:33:45
+Time Source:NTP CLOCK
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Microsoft Corporation. All rights reserved.
+
+
+fbs1:6F57 time_lapse ntpsync 11:33:45
+Time Source:LOCAL TIME
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Microsoft Corporation. All rights reserved.
+</responseBody>
+            <contentType>text</contentType>
+            <structuredData>
+&lt;structure xmlns:map=&quot;http://www.fnfr.com/svt/mapping&quot;&gt;
+    &lt;isEmpty&gt;false&lt;/isEmpty&gt;
+    &lt;responseLine&gt;fbs0:6457 time_lapse ntpsync 11:33:45&lt;/responseLine&gt;
+&lt;/structure&gt;
+</structuredData>
+            <aliases>
+                <item name="isEmpty">
+                    <queryFormatString>.//isEmpty</queryFormatString>
+                </item>
+                <item name="responseLine">
+                    <queryFormatString>.//responseLine</queryFormatString>
+                </item>
+            </aliases>
+        </item>
+    </sampleDictionary>
+    <mapperProperties>
+        <item type="com.fnfr.svt.mapping.block.documents.BlockMapperProperties">
+            <BlockMaps name="container"/>
+        </item>
+        <item type="com.fnfr.svt.mapping.regex.RegexMapperProperties"/>
+        <item type="com.fnfr.svt.mapping.table.TabularMapperProperties">
+            <tabularMaps>
+                <item name="table1">
+                    <footer>Microsoft</footer>
+                    <footerStructure>Wildcard</footerStructure>
+                    <delimiter>Colon</delimiter>
+                    <columns>
+                        <item name="col1">
+                            <lastFullCell></lastFullCell>
+                            <uid>330f8852-0dbe-4700-8b9e-8b28fb9440ea</uid>
+                        </item>
+                        <item name="col2">
+                            <lastFullCell></lastFullCell>
+                            <uid>bb467827-a862-432c-996c-c925689060cf</uid>
+                        </item>
+                    </columns>
+                </item>
+            </tabularMaps>
+        </item>
+    </mapperProperties>
+    <applicabilityProperties actionType="readFile" command="file:/C:/Users/pashok.SPIRENTCOM/Documents/telstra_time.txt"/>
+</ResponseMap>
