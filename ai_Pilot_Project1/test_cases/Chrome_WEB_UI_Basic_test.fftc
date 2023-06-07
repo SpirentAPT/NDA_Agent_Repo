@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="8.7.2.202202281342">
+<testCase version="9.2.4.202305220954">
     <general>
         <rendering testCaseId="TC_003" testCaseName="Chrome_Selenium_Test"/>
         <documentation>Chrome Selenium</documentation>
@@ -11,7 +11,7 @@
             <steps>
                 <item guid="b08fbf2a-f465-4a36-9273-f1abf79fefd9" action="open" session="t1">
                     <command>
-                        <body>project://di_Pilot_Project1/session_profiles/Selenium_Chrome.ffsp</body>
+                        <body>project://di_Pilot_Project1/session_profiles/Selenium_Firefox.ffsp</body>
                     </command>
                     <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
                         <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
